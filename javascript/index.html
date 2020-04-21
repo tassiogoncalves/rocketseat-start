@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+    <meta charset="utf8">
+    <head>
+        
+        <title>Curso de Javascript Rocketseat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+       
+        
+        <script> 
+            var endereco = {
+                rua: "Rua dos pinheiros",
+                numero: 1293,
+                bairro: "Centro",
+                cidade: "São Paulo",
+                uf: "SP"
+            };
+            function exibeDados(endereco){
+                
+                var resultado = "O usuário mora em" + endereco.cidade + " / " + 
+                                endereco.uf+ ", no bairro "+ endereco.bairro + ", na rua \"" +endereco.rua+
+                                "\" com nº" + endereco.numero;
+                                return resultado;
+            }
+            console.log(exibeDados(endereco))
+
+            function pares(x, y){
+                for(var i = x; i<=y; i++){
+                    if(i % 2 == 0){
+                        console.log(i);
+                    }
+                }
+            }
+            //pares(32, 321);
+            function temHabilidade(skills) {
+                var temSkill = (skills.indexOf("Javascript")>=0) ? true : false;
+                return console.log (temSkill);
+            }
+            var skills = ["Javascript", "ReactJS", "React Native"];
+            temHabilidade(skills); // true ou false
+
+            var usuarios = [
+                    {
+                    nome: "Diego",
+                    habilidades: ["Javascript", "ReactJS", "Redux"]
+                    },
+                    {
+                    nome: "Gabriel",
+                    habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+                    }
+                ];
+            for(let usuario of usuarios){
+                console.log("O "+ usuario.nome + " possui as habilidades: "+usuario.habilidades.join(", "));
+            }
+        </script>
+    </body>
+</html>

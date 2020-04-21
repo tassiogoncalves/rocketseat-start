@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+    <meta charset="utf8">
+    <head>
+        
+        <title>Curso de Javascript Rocketseat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+       <div id="app">
+           <button class="botao">Adicionar Quadrado</button>
+           
+           <input type="text" name="nome" id="nome">
+           <button class="botao2">Adicionar Nome</button>
+           <button class="limpar" onclick="limparLista()">Limpar Nome</button>
+           </div>
+       </div>
+        
+        <script> 
+
+            
+            var linkElement = document.createElement('a');
+            linkElement.setAttribute('href', "https://tassiogoncalves.com.br");
+            var textElement = document.createTextNode("Acessar site");
+            linkElement.appendChild(textElement);
+
+            var app = document.querySelector("div#app");
+
+            app.appendChild(linkElement);
+            var idQuad = 1;
+            function criaQuadrado(){
+                var quadrado = document.createElement('div');
+                idquadrado = "quadrado"+idQuad;
+                quadrado.setAttribute("onMouseOver", "trocarCor("+idquadrado+")");
+                quadrado.setAttribute("id", idquadrado);
+                quadrado.setAttribute("class", "quadrado");
+                quadrado.setAttribute("style", "width: 100px; height: 100px; background: red; margin: 5px; float: right;");
+                document.querySelector("#app").appendChild(quadrado);
+                idQuad++;
+            }
+            var btn = document.querySelector("button");
+            btn.onclick = function(){
+                criaQuadrado();
+            }
+
+            function getRandomColor() {
+                var letters = "0123456789ABCDEF";
+                var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+            
+            function trocarCor(elemento){
+                var newColor = getRandomColor(); // #E943F0
+                elemento.style.background = newColor;
+            }
+            var nomes = ["Diego", "Gabriel", "Lucas", "Tássio"];
+
+            var lista = document.createElement('ul');
+            lista.setAttribute("id", "listaNomes");
+            document.querySelector("#app").appendChild(lista);
+            for(let nome of nomes.sort()){
+                var item = document.createElement('li');
+                var valorItem = document.createTextNode(nome);
+                item.appendChild(valorItem);
+                lista.appendChild(item);
+            }
+            var addNome = document.querySelector(".botao2");
+            addNome.onclick = function(){
+                var inputName = document.querySelector("#nome");
+                if(inputName.value != ''){
+                    nomes.push(inputName.value);
+                    inputName.value = "";
+                    limparLista();
+                    preencherLista();
+                }else{
+                    alert("Preencha um nome");
+                }
+                
+                
+            }
+            function limparLista(){
+                var lista = document.querySelector("#listaNomes")
+                while (lista.lastElementChild) {
+                    lista.removeChild(lista.lastElementChild);
+                }
+                
+            }
+            function preencherLista(){
+                
+                for(let nome of nomes.sort()){
+                    var item = document.createElement('li');
+                    var valorItem = document.createTextNode(nome);
+                    item.appendChild(valorItem);
+                    lista.appendChild(item);
+                }
+            }
+        </script>
+    </body>
+</html>
