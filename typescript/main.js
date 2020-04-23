@@ -44,9 +44,48 @@
 //     return item === 4
 // })
 
-const arr = [1,2,3,4,5,8,9]
-console.log(arr)
+// const arr = [1,2,3,4,5,8,9]
+// console.log(arr)
 
+// const newArr = arr.map(item =>  item * 2)
+// console.log(newArr)
 
-const newArr = arr.map(item =>  item * 2)
-console.log(newArr)
+// REST (RESTO)
+// const usuario = {
+//     nome: "Tássio",
+//     idade: 30,
+//     empresa: "IF Sertão PE"
+// }
+
+// const {nome, ...resto} = usuario
+// console.log(nome)
+// console.log(resto)
+
+// function soma(...params){
+//     return params.reduce((total, next)=> total + next)
+// }
+
+// console.log(soma(5,9, 10))
+// // SPREAD passa um array para outra estrutura de dados
+
+// const arr1 = [1,2,3]
+// const arr2 = [4,5,6]
+
+// const arr3 = [...arr1, ...arr2]
+// console.log(arr3)
+
+// const usuario2 = {...usuario, nome: "Gonçalves"}
+// console.log(usuario2)
+
+// const nome = "Tássio"
+// const idade = 30
+
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos`)
+
+// const usuario = {
+//     nome,
+//     idade,
+//     empresa: "IF Sertão PE"
+
+// }
+// console.log(usuario)
